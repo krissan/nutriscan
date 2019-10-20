@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #788DC7;
+    --primary-color-dark: #4A78F1;
+    --dark-color: #343a40;
+    --light-color: #f4f4f4;
+    --danger-color: rgb(228, 83, 95);
+    --danger-color-dark: #E14040;
+    --success-color: #59AB67;
+    --success-color-dark: rgb(72, 197, 72);
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+.block {
+  padding-top: 60px;
+}
+
+.cell
+{
+    border: 2px solid #606060;
+    padding: 30px 0px 30px 0px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #606060;
+  background-color: #F2F2F2;
+}
+
+input[type=date] {
+  border-color:  #606060;
+  background-color:   #F2F2F2;
+}
+
+.inputLabel {
+  font-family: "Segoe UI Semibold";
+  font-size: 14px;
+  color: #606060;
+  margin-bottom: 0px;
+}
+
+.fullBtn {
+  width: 100%;
+  padding: 0px;
+  background-color: #F2F2F2;
+  border: none;
+  height: 100px;
+  color: #221f1e;
+  font-family: "Segoe UI Semibold";
+
+  font-size: 20px;
+}
+
+.fullBtn:hover {
+  background-color: #606060;
+  color: #F2F2F2;
+}
+
+.button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn{
+  font-family: "Segoe UI Semibold";
+  margin-top: 10px;
+  width: 100px;
+  background-color: #FFC05B;
+  color: #230600;
+  font-size: 15px;
+  padding: 10px 5px;
+  border-radius: 0px;
+}
+
+.btn:hover{
+  background-color: #EEA023;
+  color: #F2F2F2;
+}
+
+.fullR {
+  padding-left: 0px;
+}
+
+.fullL {
+  padding-right: 0px;
+}
+
+.loginLogo {
+  width:100%;
+  padding: 30px 0px;
+  max-height: 20rem;
+  width: auto;
+}
+
+.navbarLogo {
+  width: 40px;
+  height: auto;
+  padding-right: 15px;
+}
+
+.cell-submit
+{
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.margintop{
+    margin-top: 15px;
+}
+
+
+.edit {
+  background-color: var(--success-color);
+  color: #230600;
+  padding-top: 8px;
+}
+
+.edit:hover {
+  background-color: var(--success-color);
+  color: white;
+  padding-top: 8px;
+}
+
+.delete {
+    background-color: var(--danger-color);
+    color: #230600;
+    padding-top:8px;
+}
+
+.delete:hover {
+  background-color: var(--danger-color-dark);
+  color: white;
+}
+
+.buttonRnd {border-radius: 50%;}
+
+.form-row-element {
+  max-width: 100%;
+}
+
+.form-row {
+  margin-top:10px;
+}
+
+.submit {
+  background-color: var(--primary-color);
+}
+
+.submit:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.primary {
+  background-color: var(--success-color);
+}
+
+.primary:hover {
+  background-color: var(--success-color-dark);
+}
+
+.danger {
+  background-color: var(--danger-color);
+}
+
+.danger:hover {
+  background-color: var(--danger-color-dark);
+}
+
+.navpad{
+  padding-left: 15px;
+  font-family: "Segoe UI";
+}
+
+.nav-item{
+  padding: 0px 20px;
+  white-space: nowrap;
+
+}
+
+.navbar-bg {
+  background-color: #F9A825;
+  padding: 0px;
+}
+
+.navitems {
+  padding-top: 9px;
+}
+
+.navLink {
+  color:#230600;
+  font-family: "Segoe UI Semibold";
+  font-size: 15px;
+}
+
+.navLink:hover {
+  color: #F2F2F2;
+  text-decoration: none;
+}
+
+.mealitem {
+  font-family: "Segoe UI Semibold";
+  font-size: 16px;
+  color: #606060;
+  margin-bottom: 15px;
+}
+
+.mealitemHeader {
+  font-family: "Segoe UI Semibold";
+  font-size: 20px;
+  color: #606060;
+  margin-bottom:10px;
+}

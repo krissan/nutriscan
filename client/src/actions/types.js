@@ -1,0 +1,16 @@
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const USER_LOADED = 'USER_LOADED';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGOUT = 'LOGOUT';
+export const GET_MEALLIST = 'GET_MEALLIST';
+export const UPDATE_MEALLIST = 'UPDATE_MEALLIST';
+export const GET_MEALLISTS = 'GET_MEALLISTS';
+export const MEALLIST_ERROR = 'MEALLIST_ERROR';
+export const CLEAR_MEALLIST = 'CLEAR_MEALLIST';
+export const SET_DATE = 'SET_DATE';
+export const SET_EDIT_TOGGLE = 'SET_EDIT_TOGGLE';

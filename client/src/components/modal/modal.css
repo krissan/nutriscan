@@ -1,0 +1,22 @@
+.editModal {
+    overflow-y: scroll;
+    width: 90%;
+    max-height:80%;
+    background: rgb(223, 223, 223);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+    position: fixed;
+    top: 20vh;
+    left: 5%;
+    padding: 50px 50px;
+}
+
+.editModal input[type=text], input[type=password] {
+    background-color:  rgb(223, 223, 223);
+}
+
+@media (min-width: 768px) {
+    .editModal {
+        width: 50rem;
+        left: calc((100% - 50rem) / 2);
+    }
+}

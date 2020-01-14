@@ -230,3 +230,7 @@ input[type=date] {
   color: #606060;
   margin-bottom:10px;
 }
+
+.botDivider {
+  border-bottom: 2px solid #606060;
+}

@@ -6,7 +6,6 @@ import {
     GET_MEALLIST,
     MEALLIST_ERROR
 } from './types';
-import meallist from '../reducers/meallist';
 
 function isJSON (something) {
     if (typeof something != 'string')
@@ -25,7 +24,7 @@ export const getCurrentMeallist = (ddate) => async dispatch => {
         const res = await axios.get('/api/meallist/me', {params: {ddate: ddate}}, function(req, res) {
             });
 
-        if (res.data.msg = 'There is no meal list for date or user')
+        if (res.data.msg === 'There is no meal list for date or user')
         {
             dispatch({
                 type: GET_MEALLIST,
@@ -98,7 +97,7 @@ export const deleteMeallist = (id) => async dispatch => {
     try {
         const res = await axios.delete(`/api/meallist/${id}`);
 
-        if (res.data.msg = 'There is no meal list for date or user')
+        if (res.data.msg === 'There is no meal list for date or user')
         {
             dispatch({
                 type: GET_MEALLIST,
@@ -127,23 +126,26 @@ export const createMeallist = (formData, history, edit = false) => async dispatc
             }
         }
 
-        const getRes = await axios.get('/api/meallist/me', {params: {ddate: formData.ddate}}, function(req, res) {
-        });
+        /*const getRes = await axios.get('/api/meallist/me', {params: {ddate: formData.ddate}}, function(req, res) {
+        });*/
 
-        if (getRes.data.msg = 'There is no meal list for date or user')
-        {
-
-        }
 
         const res = await axios.post('/api/meallist', formData, config);
 
 
-        console.log(formData);
+        /*if (getRes.data.msg === 'There is no meal list for date or user')
+        {
+
+        }*/
+
+        console.log(res);
+        
+        //get posted meallist for date
         getCurrentMeallist(formData.ddate);
 
         dispatch(setAlert(edit ? 'Meal Updated' : 'Meal Created'));
 
-        setDate();
+        setDate(formData.ddate);
 
         if(!edit) {
             history.push('/diary');

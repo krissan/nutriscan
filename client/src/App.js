@@ -8,12 +8,12 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Alert from './components/layout/Alert';
 import Diary from './components/diary/Diary';
 import CreateMeallist from './components/meal-form/CreateMeallist';
+import AddPantry from './components/pantry/AddPantry';
 import PrivateRoute from './components/routing/PrivateRoute';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
-import setAuthToken from './utils/setAuthToken';
 
 const App = () => { 
   useEffect(() => {
@@ -33,6 +33,7 @@ const App = () => {
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/diary" component={Diary} />
               <PrivateRoute exact path="/create-meallist" component={CreateMeallist} />
+              <PrivateRoute exact path="/add-pantry" component={AddPantry} />
             </Switch>
           </section>
           </Fragment>

@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -8,7 +7,6 @@ import { deleteMeallist } from '../../actions/meallist';
 import { setDate } from '../../actions/ddate';
 import { loadUser } from '../../actions/auth';
 import { MealItem } from '../meal-form/MealItem';
-import moment from 'moment';
 import EditMealModal from '../modal/EditMealModal';
 //import { setEditToggle } from '../../actions/editToggle';
 
@@ -52,10 +50,28 @@ const Diary = ({ getCurrentMeallist, deleteMeallist, auth: { user }, meallist: {
 
     useEffect(() => {
         getCurrentMeallist(formDate, user);
+
     }, [getCurrentMeallist, user, formDate]);
 
-    
 
+    const sumCalories = () => {
+        if (meallist != null)
+        {
+            let list = meallist.MealList;
+            var sum = 0;
+            //update total calories
+            for(var i = 0; i < list.length ;i++) {
+                console.log(meallist.MealList[i]);
+                sum += meallist.MealList[i].calories;
+            }
+
+            return sum
+        }
+        else
+        {
+            return "";
+        }
+    }
 
     return loading && meallist === null ?
         <Spinner />
@@ -83,15 +99,25 @@ const Diary = ({ getCurrentMeallist, deleteMeallist, auth: { user }, meallist: {
                                         Calories
                                     </div>
                                 </div>
+                                <div className='botDivider'>
                                 {
                                     meallist.MealList.map((meal, index) => {
                                         const mealObj = {}
                                         mealObj.meal = meal
                                         mealObj.id = index
-
                                         return <MealItem meal={meallist.MealList[index]} key={index} listNum={index+1} />
                                     })
                                 }
+                                </div>
+                                <div className='row mealitemHeader'>
+                                    <div className='col-sm-1'>
+                                        Total:
+                                    </div>
+                                    <div className='col-sm-4'>
+                                        {sumCalories()}
+                                    </div>
+                                </div>
+
                                 <div className='row cell-submit'>
                                     <button className="button buttonRnd edit"><i className="material-icons" onClick={e => toggle(e)}>edit</i></button>
                                     <button className="button buttonRnd delete"><i className="material-icons" onClick={e => del(e)}>delete_outline</i></button>
@@ -108,7 +134,7 @@ const Diary = ({ getCurrentMeallist, deleteMeallist, auth: { user }, meallist: {
                     <button className="btn" onClick={e => history.push("/create-meallist")}>Plan</button>
                 </Fragment>
             }
-            { modalToggle == true ? 
+            { modalToggle === true ? 
                 <Fragment>
                     <EditMealModal modalToggle={modalToggle} setModalToggle={setModalToggle} />
                 </Fragment> :

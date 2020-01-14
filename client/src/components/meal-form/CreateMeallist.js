@@ -21,6 +21,8 @@ const CreateMeallist = ({ createMeallist, setDate, ddate, history }) => {
 
     const onMealChange = (e) => {
         const updatedMeals = [...mealState];
+        //console.log(e.target.value);
+
         updatedMeals[e.target.dataset.idx][e.target.className] = e.target.value;
         setMealState(updatedMeals);
     }
@@ -80,7 +82,7 @@ const CreateMeallist = ({ createMeallist, setDate, ddate, history }) => {
                                             name={mealId}
                                             data-idx={idx}
                                             id={mealId}
-                                            className="meal form-row-element"
+                                            className="meal"
                                             value={mealState[idx].meal}
                                             onChange={e => onMealChange(e)}
                                         />
@@ -92,7 +94,7 @@ const CreateMeallist = ({ createMeallist, setDate, ddate, history }) => {
                                             name={caloriesId}
                                             data-idx={idx}
                                             id={caloriesId}
-                                            className="calories form-row-element"
+                                            className="calories"
                                             value={mealState[idx].calories}
                                             onChange={e => onMealChange(e)}
                                         />

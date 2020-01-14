@@ -22,5 +22,5 @@ export const MealItem = ({
 
 MealItem.propTypes = {
     meal: PropTypes.object.isRequired,
-    listNum: PropTypes.object.isRequired
+    listNum: PropTypes.number.isRequired
 };
